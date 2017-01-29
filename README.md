@@ -1,25 +1,28 @@
-Example Voting App
+Docker Swarm POC
 =========
 
 Getting started
 ---------------
 
-Download [Docker](https://www.docker.com/products/overview). If you are on Mac or Windows, [Docker Compose](https://docs.docker.com/compose) will be automatically installed. On Linux, make sure you have the latest version of [Compose](https://docs.docker.com/compose/install/).
+Setup the swarm. 
 
-Run in this directory:
-```
-docker-compose up
-```
-The app will be running at [http://localhost:5000](http://localhost:5000), and the results will be at [http://localhost:5001](http://localhost:5001).
-
-Alternately, if you want to run it on a [Docker Swarm](https://docs.docker.com/engine/swarm/), first make sure you have a swarm. If you don't, run:
 ```
 docker swarm init
 ```
-Once you have your swarm, in this directory run:
+
+Create Masters and Workers based on your needs.
+
+
+Once you have your swarm, in the directory run:
+
 ```
 docker stack deploy --compose-file docker-stack.yml vote
 ```
+
+
+The app will be running on port 5000 & the results will be available at port 5001.
+
+
 
 Architecture
 -----
